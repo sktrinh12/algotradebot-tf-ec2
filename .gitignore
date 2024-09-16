@@ -28,4 +28,4 @@ Thumbs.db
 *.tfplan
 
 # pem key
-openvpn_key.pem
+*.pem
