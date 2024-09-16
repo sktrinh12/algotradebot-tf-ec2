@@ -27,3 +27,19 @@ variable "code_name" {
     error_message = "The code_name is wrong, check spelling."
   }
 }
+
+variable "broker" {
+  description = "The name of the broker or platform for trading"
+  default     = "alpaca"
+
+  validation {
+    condition = contains(var.broker_list, var.broker)
+    error_message = "The broker does not exist, check spelling."
+  }
+}
+
+variable "broker_list" {
+  description = "List of supported brokers"
+  type        = list(string)
+  default     = ["alpaca", "tradier", "kraken", "coinbase", "polygon"]
+}
