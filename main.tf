@@ -36,6 +36,7 @@ resource "aws_instance" "lumiw" {
     inline = [
       "chmod +x /tmp/${var.script_file}",
       "echo ${var.code_name} > /home/ubuntu/code_name",
+      "echo ${var.broker} > /home/ubuntu/broker",
       "sudo /tmp/${var.script_file}"
     ]
 
