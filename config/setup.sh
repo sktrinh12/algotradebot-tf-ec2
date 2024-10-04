@@ -71,7 +71,6 @@ sudo -u ubuntu -i bash << EOF
   echo "${BROKER}_IS_PAPER=True" >> .env
   echo "IS_BACKTESTING=False" >> .env
 
-  # Add cron job to stop the process at 4:30 PM EST
   (crontab -l 2>/dev/null; echo "30 16 * * * /home/ubuntu/stop.sh") | crontab -
 
   poetry lock
